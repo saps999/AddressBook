@@ -1,11 +1,11 @@
 package com.bridgelabz;
 
 public class Contact {
-    String firstName;
-    String lastName;
-    Address address;
-    String phoneNumber;
-    String emailID;
+    private String firstName;
+    private String lastName;
+    private Address address;
+    private String phoneNumber;
+    private String emailID;
 
     public String getFirstName() {
         return firstName;
