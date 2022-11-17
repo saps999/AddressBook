@@ -53,7 +53,7 @@ public class AddressBook {
 
         for (int i = 0; i < contactList.size(); i++) {
             Contact temp = contactList.get(i);
-            if (name.equalsIgnoreCase(temp.firstName)) {
+            if (name.equalsIgnoreCase(temp.getFirstName())) {
                 contact = temp;
             }
         }
@@ -170,9 +170,9 @@ public class AddressBook {
                 String state = sc.next();
                 System.out.print("Enter the updated zip :	");
                 int zip = sc.nextInt();
-                contact.address.setCity(city);
-                contact.address.setState(state);
-                contact.address.setZip(zip);
+                contact.getAddress().setCity(city);
+                contact.getAddress().setState(state);
+                contact.getAddress().setZip(zip);
                 break;
         }
 
@@ -191,16 +191,15 @@ public class AddressBook {
 
     public void deleteContact() {
         Contact contact = null;
-        String name = null;
+        String name;
 
         System.out.print("\nEnter the First Name of the contact you want to delete : ");
         name = sc.next();
         while (contact == null) {
             contact = getContactToModify(name);
+
             if (contact == null) {
                 System.out.println("\nNo such entry exists!\nPlease enter a valid First Name.");
-                name = sc.next();
-                contact = getContactToModify(name);
             }
         }
         contactList.remove(contact);

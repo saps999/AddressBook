@@ -1,9 +1,9 @@
 package com.bridgelabz;
 
 public class Address {
-    String city;
-    String state;
-    int zip;
+    private String city;
+    private String state;
+    private int zip;
 
     public String getCity() {
         return city;
@@ -31,6 +31,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "City : " + city + "\tState : " + state + "\tZip : " + zip;
+        return "City : " + city + "\nState : " + state + "\nZip : " + zip;
     }
 }
